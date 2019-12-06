@@ -1,0 +1,24 @@
+{
+  "name": "projeto-bd",
+  "version": "1.0.0",
+  "description": "Projeto de Banco de Dados",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jackson-Matheus/projeto-bd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jackson-Matheus/projeto-bd/issues"
+  },
+  "homepage": "https://github.com/Jackson-Matheus/projeto-bd#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  }
+}
