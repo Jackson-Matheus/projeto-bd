@@ -1,4 +1,6 @@
 var express = require('express');
+var mysql = require('../../bd/data-base-connection/index');
+
 var router = express.Router();
 
 router.use(function timeLog(req, res, next) {

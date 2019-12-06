@@ -1,5 +1,4 @@
 var express = require('express');
-var mysql = require('../bd/data-base-connection/index');
 
 var router = require('./routes/index');
 
