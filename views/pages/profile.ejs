@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        a:link,
+        a:visited {
+            background-color: #f44336;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        a:hover,
+        a:active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2> BEM-VINDO </h2>
+            <h2> PERFIL </h2>
+        </div>
+        <div>
+            <div>
+                <h3>NOME</h3>
+                <label><%=data.nome_user%></label>
+                <h3>EMAIL</h3>
+                <label><%= data.email_user %></label>
+                <h3>TELEFONE</h3>
+                <label><%= data.telefone %></label>
+            </div>
+        </div>
+        <div class="main">
+            <h2><a href="/shopping">FAÇA SUAS COMPRAS AQUI</a></h2>
+            <h2><a href="/store">SUA LOJA</a></h2>
+            <h2><a href="/historic">SUAS COMPRAS</a></h2>
+            <h2><a href="/sales">SUAS VENDAS</a></h2>
+            <h2><a href="/order">SEUS PEDIDOS</a></h2>
+            <h2><a href="/order-to-approve/<%=data.id_user%>">PEDIDOS PARA APROVAR</a></h2>
+            <h2><a href="/logout">SAIR</a></h2>
+
+
+
+            <h1><a href="/consulta">consulta</a></h1>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    async function goBack() {
+        const url = '/profile';
+        await axios.get(url);
+        window.location.href = url
+    }
+</script>
+
+<body>
+
+    <div>
+        <button onclick="goBack()">Voltar</button>
+    </div>
+    <div>
+        <h1> BRIGADEIRO MAIS CARO</h1>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody>
+                <% if(data.length){                                   
+                    for(var i = 0; i< data.length; i++) {%>
+                <td> <%=data[i].nome_user%></td>
+                <td> <%=data[i].nome_produto%></td>
+                <td> <%=data[i].preco%></td>
+              
+                <tr>
+                </tr>
+                <% }%>
+            <% } %>
+
+
+        </table>
+
+    </div>
+
+
+</body>
+
+</html>

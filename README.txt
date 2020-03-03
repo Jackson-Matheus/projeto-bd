@@ -1,19 +1,7 @@
-## 
-
-Projeto de Banco de Dados
 
 
-##
+Projeto de banco de dados - Sale and Buy UFAM
 
-Site de vendas de produtos para estudantes de uma universidade
-
-Qualquer aluno da faculdade pode se cadastrar
-
-
-##
-
-
-
-
-
-
+Comando para executar no terminal:
+BANCO DE DADOS:
+docker exec -i mysql-container mysql -uroot -pgeforce2020 < database/sql/script.sql

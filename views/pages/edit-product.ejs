@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<body>
+    <div>
+        <h2>EDITAR PRODUTO</h2>
+        <%data.forEach(function(details) { %>
+        <form action="/store/<%=details.id_produto%>" method="POST">
+            <input type="text" value ="<%=details.nome_produto%>" name="name"  required>
+            <br>
+            <input type="number" value ="<%=details.preco_produto%>" name="price"   min="0" required>
+            <br>
+            <input type="text"value ="<%=details.categoria_produto%>" name="category"   required>
+            <br>
+            <input type="text" value ="<%=details.descricao_produto%>" name="description"    required>
+            <br>
+
+            <input type="number" value ="<%=details.quantidade_produto%>" name="amount" min="0" required>
+            <br>
+            <button type="submit">Editar</button>
+        </form>
+        <% }) %>
+    </div>   
+</body>
+
+</html>

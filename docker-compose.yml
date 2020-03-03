@@ -1,0 +1,24 @@
+version: "2"
+services:
+  db:
+    image: mysql
+    container_name: mysql-container
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+        MYSQL_ROOT_PASSWORD: icomp123
+    volumes:
+        - ./database/data:/var/lib/mysql
+    restart: always    
+  
+  back-end:
+      build: "./backend"
+      container_name: node-containe-api-2
+      restart: always
+      volumes: 
+        - ./backend:/home/node/app/
+      ports: 
+        - 9000:9000
+      depends_on:
+        - db
+      
+    

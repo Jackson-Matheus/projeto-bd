@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    async function goBack() {
+        const url = '/profile'
+        axios.get(url);
+        window.location.href = url
+    }
+</script>
+
+<body>
+    <div>
+        <div>
+            <h2>Seus pedidos para aprovar</h2>
+        </div>
+        <div>
+            <button onclick="goBack()">Voltar</button>
+        </div>
+        <br>
+        <div>
+            <table>
+                <tr>
+                    <th>Produto</th>
+                    <th>Local de entrega</th>
+                    <th>Hora</th>
+                    <th>Observacao</th>
+                    <th>Troco</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <% if(data.length > 0){                           
+                            for(let i = 0; i < data.length; i++) {
+                    %>
+                    <tr>
+                        <td><%= data[i].nome_produto %></td>
+                        <td><%= data[i].localidade %></td>
+                        <td><%= data[i].hora_entrega %></td>
+                        <td><%= data[i].observacao %></td>
+                        <td><span>R$ </span> <%= data[i].troco %></td>
+
+                        <td><a href="/orders-to-approve/<%=data[i].id_pedido%>/1"> Aceitar </a></td>
+                        <td><a href="/orders-to-approve/<%=data[i].id_pedido%>/2"> Recusar </a></td>
+                        <% } %>
+
+                    </tr>
+                    <% } %>
+
+
+            </table>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

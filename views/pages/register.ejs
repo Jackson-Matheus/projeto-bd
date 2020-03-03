@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    async function goLogin() {
+        const url = '/';
+        await axios.get(url);
+        window.location.href = url;
+    }
+</script>
+<body>
+    <div>
+        <div>
+            <div>
+                <h2>CADASTRO</h2>
+                <form  action="register" method="POST">
+                    <input type="text" name="username"  placeholder="nome" required>
+                    <br>
+
+                    <input type="tel" name="telefone" placeholder="telefone" maxlength="11" required>
+                    <br>
+
+                    <input type="email" name="email" placeholder="email" required>
+                    <br>
+
+                    <input type="password" name="password"  placeholder="Senha" maxlength="8"
+                        required>
+                    <br>
+                    <br>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+            <br>
+            <button onclick="goLogin()"> Voltar</button>
+
+
+        </div>
+
+        <div>
+        </div>
+
+</body>
+
+</html>

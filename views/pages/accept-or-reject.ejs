@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<style>
+</style>
+
+<script>
+    async function goBack() {
+        const url = '/profile'
+        axios.get(url);
+        window.location.href = url
+    }
+</script>
+
+<body>
+    <div>
+        <% data.forEach(function(details){ %>
+        <form action="/orders-to-approve/<%=details.id_pedido%>/1" method="POST">
+            <label> localidade     </label><input type="text" value="<%=details.localidade%>" name="local" required><br>            
+            <label> hora_entrega     </label><input type="text" value="<%=details.hora_entrega%>" name="hour" required><br>            
+            <button type="submit">CONFIRMAR</button>
+            <% })%>
+        </form>
+    </div>
+</body>
+
+</html>
